@@ -16,7 +16,7 @@
 @interface PKRevealControllerContainerView : UIView
 
 #pragma mark - Properties
-@property (nonatomic, weak, readwrite) UIViewController *viewController;
+@property (nonatomic, unsafe_unretained, readwrite) UIViewController *viewController;
 
 #pragma mark - Methods
 - (id)initForController:(UIViewController *)controller;

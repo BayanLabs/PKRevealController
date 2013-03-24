@@ -952,9 +952,9 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 - (void)showLeftViewControllerAnimated:(BOOL)animated
                             completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
-    void (^showLeftViewBlock)(BOOL finished) = ^(BOOL finished)
+    void (^showLeftViewBlock)(BOOL finished) = ^(BOOL finished_)
     {
         [weakSelf removeRightViewControllerFromHierarchy];
         [weakSelf addLeftViewControllerToHierarchy];
@@ -992,9 +992,9 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 - (void)showRightViewControllerAnimated:(BOOL)animated
                              completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
-    void (^showRightViewBlock)(BOOL finished) = ^(BOOL finished)
+    void (^showRightViewBlock)(BOOL finished) = ^(BOOL finished_)
     {
         [weakSelf removeLeftViewControllerFromHierarchy];
         [weakSelf addRightViewControllerToHierarchy];
@@ -1031,7 +1031,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 - (void)showFrontViewControllerAnimated:(BOOL)animated
                              completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
     [self setFrontViewFrame:[self frontViewFrameForCenter]
                    animated:animated
@@ -1052,7 +1052,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 - (void)enterPresentationModeForLeftViewControllerAnimated:(BOOL)animated
                                                 completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
     [self setFrontViewFrame:[self frontViewFrameForLeftViewPresentationMode]
                    animated:animated
@@ -1066,7 +1066,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 - (void)enterPresentationModeForRightViewControllerAnimated:(BOOL)animated
                                                  completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
     [self setFrontViewFrame:[self frontViewFrameForRightViewPresentationMode]
                    animated:animated
@@ -1081,7 +1081,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
                                                    animated:(BOOL)animated
                                                  completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
     CGRect frame;
     PKRevealControllerState state;
@@ -1110,7 +1110,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
                                                     animated:(BOOL)animated
                                                   completion:(PKDefaultCompletionHandler)completion
 {
-    __weak PKRevealController *weakSelf = self;
+    __unsafe_unretained PKRevealController *weakSelf = self;
     
     CGRect frame;
     PKRevealControllerState state;
